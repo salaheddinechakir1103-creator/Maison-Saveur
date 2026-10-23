@@ -5,6 +5,8 @@ import fixedImage3 from '../assets/images/specialty_coffee_cafe_1792755657913.jp
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { CulinaryPlateScene } from '../components/ThreeCanvas/CulinaryPlateScene';
+import { CinematicVideoHero } from '../components/CinematicVideoHero/CinematicVideoHero';
+import { StoryboardModal } from '../components/CinematicVideoHero/StoryboardModal';
 import { INITIAL_MENU_ITEMS, REVIEWS } from '../data/menuData';
 import { MenuItem, ReviewItem } from '../types';
 import { DishModal } from '../components/Menu/DishModal';
@@ -20,7 +22,9 @@ import {
   Clock, 
   UtensilsCrossed, 
   Plus, 
-  Check 
+  Check,
+  Film,
+  Box
 } from 'lucide-react';
 
 interface Props {
@@ -32,6 +36,10 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
   const { addItem } = useCart();
   const [selectedDish, setSelectedDish] = useState<MenuItem | null>(null);
   const [addedDishId, setAddedDishId] = useState<string | null>(null);
+
+  // Hero Mode: 'film' (Real 1080p Cinematic 3D Video) or 'three' (Interactive WebGL Plate)
+  const [heroMode, setHeroMode] = useState<'film' | 'three'>('film');
+  const [isStoryboardOpen, setIsStoryboardOpen] = useState(false);
 
   // Guestbook & Events simulator modals
   const [isGuestbookOpen, setIsGuestbookOpen] = useState(false);
@@ -70,75 +78,116 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
   return (
     <div className="w-full">
       {/* =========================================================================
-          HERO SECTION: 3D Culinary Masterpiece with Editorial Typography
+          HERO SECTION: Dual Cinematic Video & Interactive 3D Experience
       ========================================================================= */}
-      <section className="relative w-full h-[92vh] min-h-[640px] flex items-center justify-center overflow-hidden bg-radial from-[#15151c] via-[#0a0a0c] to-[#060608]">
-        
-        {/* Central 3D Gourmet Culinary Canvas */}
-        <div className="absolute inset-0 z-0">
-          <CulinaryPlateScene />
-        </div>
-
-        {/* Cinematic Vignette Overlays */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0c] to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/60 to-transparent pointer-events-none" />
-
-        {/* Floating Editorial Narrative (Left/Top) - Non-obstructive */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex flex-col justify-between py-12 pointer-events-none">
-          
-          {/* Top Kicker */}
-          <div className="max-w-xl pointer-events-auto">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#d4af37] font-cinzel block mb-2">
-              {t('heroPreTitle')}
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-luxury font-bold text-[#fcfaf6] leading-[1.08] text-balance">
-              {t('heroTitleLine1')} <br />
-              <span className="italic font-light text-[#d4af37]">{t('heroTitleLine2')}</span>
-            </h1>
-            <p className="mt-4 text-xs sm:text-sm text-[#d8d3c8]/85 max-w-md leading-relaxed hidden sm:block">
-              {t('heroSubtitle')}
-            </p>
-
-            <div className="mt-6 flex items-center gap-4">
+      {heroMode === 'film' ? (
+        <CinematicVideoHero
+          mode="film"
+          onToggleMode={setHeroMode}
+          onExploreMenu={() => setActivePage('menu')}
+          onBookTable={() => setActivePage('reservation')}
+          onOpenStoryboard={() => setIsStoryboardOpen(true)}
+        />
+      ) : (
+        <section className="relative w-full h-[94vh] min-h-[660px] flex items-center justify-center overflow-hidden bg-radial from-[#15151c] via-[#0a0a0c] to-[#060608]">
+          {/* Mode Switcher HUD (Top Right) */}
+          <div className="absolute top-6 right-6 z-30 flex items-center gap-2">
+            <div className="flex items-center gap-1 bg-[#0a0a0e]/85 backdrop-blur-md p-1 rounded-xl border border-[#d4af37]/30 shadow-2xl">
               <button
-                onClick={() => setActivePage('menu')}
-                className="px-6 py-3 bg-[#d4af37] hover:bg-[#e6ca65] text-[#0a0a0c] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg hover:shadow-[#d4af37]/30 flex items-center gap-2 cursor-pointer"
+                onClick={() => setHeroMode('film')}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider text-[#a1a1aa] hover:text-white transition-all cursor-pointer"
+                title="Passer au Film Cinématique 3D"
               >
-                <span>{t('discoverMenu')}</span>
-                <ArrowRight className="w-4 h-4" />
+                <Film className="w-3.5 h-3.5" />
+                <span>Film 3D</span>
               </button>
-
+              
               <button
-                onClick={() => setActivePage('reservation')}
-                className="px-6 py-3 bg-black/40 hover:bg-black/60 text-[#fcfaf6] border border-[#d4af37]/40 hover:border-[#d4af37] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all backdrop-blur-md flex items-center gap-2 cursor-pointer"
+                onClick={() => setHeroMode('three')}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-[#d4af37] text-[#0a0a0c] shadow-md transition-all cursor-pointer"
+                title="Scène 3D Interactive WebGL active"
               >
-                <Calendar className="w-3.5 h-3.5 text-[#d4af37]" />
-                <span>{t('bookTable')}</span>
+                <Box className="w-3.5 h-3.5" />
+                <span>3D Interactif</span>
               </button>
             </div>
+
+            <button
+              onClick={() => setIsStoryboardOpen(true)}
+              className="p-2 bg-[#0a0a0e]/85 backdrop-blur-md text-[#d4af37] border border-[#d4af37]/30 rounded-xl hover:bg-[#d4af37]/20 transition-colors cursor-pointer"
+              title="Consulter le Storyboard du Film & Prompts de Production"
+            >
+              <Sparkles className="w-4 h-4" />
+            </button>
           </div>
 
-          {/* Bottom Trust Kicker */}
-          <div className="flex items-center justify-between text-xs text-[#a1a1aa] pointer-events-auto border-t border-white/5 pt-4">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-[#d4af37]" />
-                <span className="tracking-wide">Prix de l'Excellence Culinaire 2026</span>
-              </div>
-              <div className="hidden md:flex items-center gap-2">
-                <UtensilsCrossed className="w-4 h-4 text-[#d4af37]" />
-                <span>Terroirs du Maroc & Haute École Française</span>
+          {/* Central 3D Gourmet Culinary Canvas */}
+          <div className="absolute inset-0 z-0">
+            <CulinaryPlateScene />
+          </div>
+
+          {/* Cinematic Vignette Overlays */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0c] to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/60 to-transparent pointer-events-none" />
+
+          {/* Floating Editorial Narrative (Left/Top) */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex flex-col justify-between py-12 pointer-events-none">
+            <div className="max-w-xl pointer-events-auto mt-6">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-[#d4af37] font-cinzel block mb-2">
+                {t('heroPreTitle')}
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-luxury font-bold text-[#fcfaf6] leading-[1.08] text-balance">
+                {t('heroTitleLine1')} <br />
+                <span className="italic font-light text-[#d4af37]">{t('heroTitleLine2')}</span>
+              </h1>
+              <p className="mt-4 text-xs sm:text-sm text-[#d8d3c8]/85 max-w-md leading-relaxed hidden sm:block">
+                {t('heroSubtitle')}
+              </p>
+
+              <div className="mt-6 flex items-center gap-4">
+                <button
+                  onClick={() => setActivePage('menu')}
+                  className="px-6 py-3 bg-[#d4af37] hover:bg-[#e6ca65] text-[#0a0a0c] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg hover:shadow-[#d4af37]/30 flex items-center gap-2 cursor-pointer"
+                >
+                  <span>{t('discoverMenu')}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <button
+                  onClick={() => setActivePage('reservation')}
+                  className="px-6 py-3 bg-black/40 hover:bg-black/60 text-[#fcfaf6] border border-[#d4af37]/40 hover:border-[#d4af37] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all backdrop-blur-md flex items-center gap-2 cursor-pointer"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-[#d4af37]" />
+                  <span>{t('bookTable')}</span>
+                </button>
               </div>
             </div>
-            
-            <span className="text-[11px] text-[#d4af37] font-cinzel">
-              Service Voiturier & Conciergerie Privée
-            </span>
+
+            <div className="flex items-center justify-between text-xs text-[#a1a1aa] pointer-events-auto border-t border-white/5 pt-4">
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-[#d4af37]" />
+                  <span className="tracking-wide">Prix de l'Excellence Culinaire 2026</span>
+                </div>
+                <div className="hidden md:flex items-center gap-2">
+                  <UtensilsCrossed className="w-4 h-4 text-[#d4af37]" />
+                  <span>Terroirs du Maroc & Haute École Française</span>
+                </div>
+              </div>
+              
+              <span className="text-[11px] text-[#d4af37] font-cinzel">
+                Service Voiturier & Conciergerie Privée
+              </span>
+            </div>
           </div>
+        </section>
+      )}
 
-        </div>
-
-      </section>
+      {/* Storyboard Modal */}
+      <StoryboardModal
+        isOpen={isStoryboardOpen}
+        onClose={() => setIsStoryboardOpen(false)}
+      />
 
       {/* =========================================================================
           CHAPTER 01: SIGNATURE DISHES (Featured Collection)
