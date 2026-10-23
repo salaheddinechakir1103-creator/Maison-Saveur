@@ -1,3 +1,9 @@
+import fixedImage0 from '../assets/images/hero_culinary_restaurant_1792754318347.jpg';
+import fixedImage1 from '../assets/images/dish_truffle_gastronomy_1792754320242.jpg';
+import fixedImage2 from '../assets/images/restaurant_terrace_morocco_1792754319947.jpg';
+import fixedImage3 from '../assets/images/chef_culinary_portrait_1792754319896.jpg';
+import fixedImage4 from '../assets/images/patisserie_haute_couture_1792754336647.jpg';
+import fixedImage5 from '../assets/images/moroccan_fusion_cocktail_1792754336693.jpg';
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { X, ZoomIn, Sparkles } from 'lucide-react';
@@ -23,7 +29,7 @@ export const GalleryPage: React.FC = () => {
       titleFr: 'Le Grand Salon Impérial',
       titleAr: 'الصالون الإمبراطوري الكبير',
       category: 'espaces',
-      image: '/src/assets/images/hero_culinary_restaurant_1792754318347.jpg',
+      image: fixedImage0,
       subtitleFr: 'Lustres de cristal doré et tables drapées de lin immaculé',
       subtitleAr: 'ثريات الكريستال المذهب والطاولات المغطاة بالكتان الفاخر'
     },
@@ -32,7 +38,7 @@ export const GalleryPage: React.FC = () => {
       titleFr: 'Filet Mignon & Truffe Noire',
       titleAr: 'فيليه مينيون بالكمأة السوداء',
       category: 'gastronomie',
-      image: '/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg',
+      image: fixedImage1,
       subtitleFr: 'Cuisson millimétrée, truffe de l\'Atlas et feuille d\'or 24K',
       subtitleAr: 'طهو دقيق، كمأة جبال الأطلس وورق الذهب الخالص'
     },
@@ -41,7 +47,7 @@ export const GalleryPage: React.FC = () => {
       titleFr: 'La Terrasse Sous les Étoiles',
       titleAr: 'شرفة الحديقة تحت النجوم',
       category: 'espaces',
-      image: '/src/assets/images/restaurant_terrace_morocco_1792754319947.jpg',
+      image: fixedImage2,
       subtitleFr: 'Lanternes traditionnelles et ambiance tamisée à Marrakech',
       subtitleAr: 'فوانيس تقليدية وأجواء ساحرة في مراكش'
     },
@@ -50,7 +56,7 @@ export const GalleryPage: React.FC = () => {
       titleFr: 'L\'Atelier de Dressage du Chef',
       titleAr: 'ورشة إعداد وإبداع الشيف',
       category: 'gastronomie',
-      image: '/src/assets/images/chef_culinary_portrait_1792754319896.jpg',
+      image: fixedImage3,
       subtitleFr: 'La précision chirurgicale de la haute gastronomie',
       subtitleAr: 'الدقة المتناهية في تقديم الأطباق الراقية'
     },
@@ -59,7 +65,7 @@ export const GalleryPage: React.FC = () => {
       titleFr: 'Entremets Grand Cru & Sucre Filé',
       titleAr: 'حلوى الشوكولاتة بالسكر المغزول',
       category: 'patisserie',
-      image: '/src/assets/images/patisserie_haute_couture_1792754336647.jpg',
+      image: fixedImage4,
       subtitleFr: 'Chocolat noir Guanaja 70% et dôme croustillant',
       subtitleAr: 'شوكولاتة داكنة 70% مع قبة مقرمشة'
     },
@@ -68,7 +74,7 @@ export const GalleryPage: React.FC = () => {
       titleFr: 'Élixir "Nuit de Marrakech"',
       titleAr: 'مشروب "ليالي مراكش" الفاخر',
       category: 'mixologie',
-      image: '/src/assets/images/moroccan_fusion_cocktail_1792754336693.jpg',
+      image: fixedImage5,
       subtitleFr: 'Safran royal, grenade fraîche et brume de cèdre fumé',
       subtitleAr: 'زعفران ملكي، رمان طازج ودخان خشب الأرز'
     }
