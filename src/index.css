@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-arabic: 'Amiri', serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+/* Subtle luxury grain */
+.bg-grain {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom gold shimmer text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f7f4ee 0%, #d4af37 50%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 20px -5px rgba(212, 175, 55, 0.15);
+}
+
+/* Print styles for QR Code Menu */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-qr-card, #printable-qr-card * {
+    visibility: visible;
+  }
+  #printable-qr-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 480px;
+    background: white !important;
+    color: black !important;
+    border: 2px solid #d4af37 !important;
+    box-shadow: none !important;
+  }
+}

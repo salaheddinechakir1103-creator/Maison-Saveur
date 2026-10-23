@@ -1,0 +1,6 @@
+{
+  "name": "Maison Saveur - Haute Gastronomie & Café",
+  "description": "Restaurant gastronomique et café de luxe d'inspiration étoilée. L'art culinaire d'exception au cœur de Marrakech et Casablanca.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
