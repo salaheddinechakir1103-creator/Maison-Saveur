@@ -1,3 +1,9 @@
+import fixedImage0 from '../assets/images/dish_truffle_gastronomy_1792754320242.jpg';
+import fixedImage1 from '../assets/images/hero_culinary_restaurant_1792754318347.jpg';
+import fixedImage2 from '../assets/images/chef_culinary_portrait_1792754319896.jpg';
+import fixedImage3 from '../assets/images/restaurant_terrace_morocco_1792754319947.jpg';
+import fixedImage4 from '../assets/images/patisserie_haute_couture_1792754336647.jpg';
+import fixedImage5 from '../assets/images/moroccan_fusion_cocktail_1792754336693.jpg';
 import { MenuItem, ReviewItem } from '../types';
 
 export const INITIAL_MENU_ITEMS: MenuItem[] = [
@@ -13,7 +19,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['لحم أنغوس أسود', 'كمأة إفران السوداء', 'موسلين الجزر الأبيض', 'صلصة إكليل الجبل', 'ورق الذهب 24 قيراط'],
     allergens: ['Lait', 'Sulfites'],
     winePairing: 'Accord Élixir : Infusion corsée de mûres sauvages et bois de chêne vieilli',
-    image: '/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg',
+    image: fixedImage0,
     isChefSpecial: true,
     calories: 580
   },
@@ -29,7 +35,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['إسكالوب طازج', 'زعفران تاليوين', 'حمضيات الصويرة', 'زهرة الملح', 'شبت بري'],
     allergens: ['Mollusques'],
     winePairing: 'Cuvée Blanche sans alcool : Verjus pétillant de pomme et fleur d\'oranger',
-    image: '/src/assets/images/hero_culinary_restaurant_1792754318347.jpg',
+    image: fixedImage1,
     isChefSpecial: true,
     calories: 220
   },
@@ -45,7 +51,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['خرشوف بنفسجي', 'كمأة بيضاء', 'بندق محمص', 'كريمة طازجة', 'كزبرة برية'],
     allergens: ['Lait', 'Fruits à coque'],
     winePairing: 'Infusion froide de camomille royale et poire pochée',
-    image: '/src/assets/images/chef_culinary_portrait_1792754319896.jpg',
+    image: fixedImage2,
     calories: 290
   },
   {
@@ -60,7 +66,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['لحم حمل الأطلس', 'زيت أركان عضوي', 'بطاطا حلوة', 'بهارات ملكية', 'مرق غني'],
     allergens: ['Lait', 'Gluten'],
     winePairing: 'Nectar de grenade sauvage et réduction de cardamome',
-    image: '/src/assets/images/restaurant_terrace_morocco_1792754319947.jpg',
+    image: fixedImage3,
     isChefSpecial: true,
     calories: 640
   },
@@ -76,7 +82,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['سمك القاروص', 'شمر طازج', 'ليمون معتق', 'زبدة فرنسية', 'هليون'],
     allergens: ['Poisson', 'Lait'],
     winePairing: 'Infusion glacée de thé vert Sencha et zeste de yuzu',
-    image: '/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg',
+    image: fixedImage0,
     calories: 420
   },
   {
@@ -91,7 +97,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['شوكولاتة داكنة 70%', 'برالينيه البندق', 'ذهب 24 قيراط', 'توت العليق', 'سكر مغزول'],
     allergens: ['Lait', 'Fruits à coque', 'Œufs'],
     winePairing: 'Thé noir fumé Lapsang Souchong et vanille Bourbon',
-    image: '/src/assets/images/patisserie_haute_couture_1792754336647.jpg',
+    image: fixedImage4,
     isChefSpecial: true,
     calories: 410
   },
@@ -107,7 +113,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['ماء زهر فاس', 'فستق الحوز', 'شوكولاتة بيضاء ناعمة', 'بسكويت الزبدة'],
     allergens: ['Lait', 'Fruits à coque', 'Gluten', 'Œufs'],
     winePairing: 'Infusion royale de fleurs séchées et menthe pouliot',
-    image: '/src/assets/images/patisserie_haute_couture_1792754336647.jpg',
+    image: fixedImage4,
     calories: 360
   },
   {
@@ -121,7 +127,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsFr: ['Safran de Taliouine', 'Grenade fraîche', 'Essence de cèdre de l\'Atlas', 'Fleur d\'oranger', 'Glace diamant'],
     ingredientsAr: ['زعفران تاليوين', 'رمان طازج', 'خلاصة الأرز', 'ماء زهر', 'ثلج نقي'],
     allergens: [],
-    image: '/src/assets/images/moroccan_fusion_cocktail_1792754336693.jpg',
+    image: fixedImage5,
     isChefSpecial: true,
     calories: 95
   },
@@ -136,7 +142,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsFr: ['Thé blanc Bai Hao Yinzhen', 'Menthe sauvage de l\'Ourika', 'Miel d\'oranger pur'],
     ingredientsAr: ['شاي أبيض ملكي', 'نعناع بري', 'عسل الزهر النقي'],
     allergens: [],
-    image: '/src/assets/images/moroccan_fusion_cocktail_1792754336693.jpg',
+    image: fixedImage5,
     calories: 20
   },
   {
@@ -151,7 +157,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ingredientsAr: ['مختارات الشيف الحصرية', 'مشروبات نادرة متوافقة مع كل طبق', 'خبز مخمر وزبدة خاصة'],
     allergens: ['Lait', 'Gluten', 'Poisson', 'Fruits à coque', 'Œufs'],
     winePairing: 'Accord Élixir Signature en 7 créations mixologiques et grands crus sans alcool',
-    image: '/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg',
+    image: fixedImage0,
     isChefSpecial: true,
     calories: 1200
   }
