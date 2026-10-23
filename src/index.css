@@ -68,3 +68,16 @@
     box-shadow: none !important;
   }
 }
+
+/* Mobile-first luxury presentation without scaling down desktop layouts. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+#root { min-width: 0; width: 100%; }
+img, video, canvas { max-width: 100%; }
+@media (max-width: 639px) {
+  body { width: 100%; overflow-x: clip; }
+  h1 { overflow-wrap: anywhere; }
+  h2 { overflow-wrap: anywhere; }
+  input, select, textarea { font-size: 16px; max-width: 100%; }
+  button, a { touch-action: manipulation; }
+  .max-w-7xl, .max-w-6xl, .max-w-5xl { min-width: 0; }
+}
