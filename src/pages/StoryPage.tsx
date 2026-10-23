@@ -1,3 +1,4 @@
+import fixedImage0 from '../assets/images/chef_culinary_portrait_1792754319896.jpg';
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Sparkles, Award, Heart, Leaf, Compass } from 'lucide-react';
@@ -84,7 +85,7 @@ export const StoryPage: React.FC = () => {
 
         <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/30 shadow-2xl">
           <img
-            src="/src/assets/images/chef_culinary_portrait_1792754319896.jpg"
+            src={fixedImage0}
             alt="Chef à l'œuvre"
             className="w-full h-[480px] object-cover"
           />
