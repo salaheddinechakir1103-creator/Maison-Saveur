@@ -89,7 +89,7 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
           onOpenStoryboard={() => setIsStoryboardOpen(true)}
         />
       ) : (
-        <section className="relative w-full h-[94vh] min-h-[660px] flex items-center justify-center overflow-hidden bg-radial from-[#15151c] via-[#0a0a0c] to-[#060608]">
+        <section className="relative w-full h-[100svh] min-h-[560px] sm:h-[94vh] sm:min-h-[660px] flex items-center justify-center overflow-hidden bg-radial from-[#15151c] via-[#0a0a0c] to-[#060608]">
           {/* Mode Switcher HUD (Top Right) */}
           <div className="absolute top-6 right-6 z-30 flex items-center gap-2">
             <div className="flex items-center gap-1 bg-[#0a0a0e]/85 backdrop-blur-md p-1 rounded-xl border border-[#d4af37]/30 shadow-2xl">
@@ -131,7 +131,7 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/60 to-transparent pointer-events-none" />
 
           {/* Floating Editorial Narrative (Left/Top) */}
-          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex flex-col justify-between py-12 pointer-events-none">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full h-full flex flex-col justify-between py-8 sm:py-12 pointer-events-none">
             <div className="max-w-xl pointer-events-auto mt-6">
               <span className="text-[11px] uppercase tracking-[0.3em] text-[#d4af37] font-cinzel block mb-2">
                 {t('heroPreTitle')}
