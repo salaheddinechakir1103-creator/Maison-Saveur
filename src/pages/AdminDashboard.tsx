@@ -1,3 +1,4 @@
+import fixedImage0 from '../assets/images/dish_truffle_gastronomy_1792754320242.jpg';
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useReservation } from '../context/ReservationContext';
@@ -91,7 +92,7 @@ export const AdminDashboard: React.FC<Props> = ({ setActivePage }) => {
       descriptionAr: newDishDesc.trim() || 'إبداع الشيف التنفيذي.',
       ingredientsFr: ['Ingrédients nobles de saison'],
       ingredientsAr: ['مكونات نبيلة منتقاة'],
-      image: '/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg',
+      image: fixedImage0,
       isChefSpecial: true
     };
 
