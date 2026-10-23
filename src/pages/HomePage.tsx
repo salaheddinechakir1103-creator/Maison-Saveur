@@ -1,3 +1,7 @@
+import fixedImage0 from '../assets/images/chef_culinary_portrait_1792754319896.jpg';
+import fixedImage1 from '../assets/images/hero_culinary_restaurant_1792754318347.jpg';
+import fixedImage2 from '../assets/images/restaurant_terrace_morocco_1792754319947.jpg';
+import fixedImage3 from '../assets/images/specialty_coffee_cafe_1792755657913.jpg';
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { CulinaryPlateScene } from '../components/ThreeCanvas/CulinaryPlateScene';
@@ -241,7 +245,7 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
           {/* Chef High-Res Editorial Photography */}
           <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/30 shadow-2xl group">
             <img
-              src="/src/assets/images/chef_culinary_portrait_1792754319896.jpg"
+              src={fixedImage0}
               alt="Chef Amine Benjelloun au passe de dressage"
               className="w-full h-[480px] lg:h-[560px] object-cover transition-transform duration-700 group-hover:scale-102"
             />
@@ -318,7 +322,7 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
           {/* Imperial Salon Card */}
           <div className="relative rounded-2xl overflow-hidden border border-white/10 group h-96 lg:h-[420px]">
             <img
-              src="/src/assets/images/hero_culinary_restaurant_1792754318347.jpg"
+              src={fixedImage1}
               alt="Salon Impérial Maison Saveur"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -339,7 +343,7 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
           {/* Garden Terrace Card */}
           <div className="relative rounded-2xl overflow-hidden border border-white/10 group h-96 lg:h-[420px]">
             <img
-              src="/src/assets/images/restaurant_terrace_morocco_1792754319947.jpg"
+              src={fixedImage2}
               alt="Terrasse Jardin sous les lanternes"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -386,7 +390,7 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
 
           <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/30 shadow-2xl group">
             <img
-              src="/src/assets/images/specialty_coffee_cafe_1792755657913.jpg"
+              src={fixedImage3}
               alt="Salon de Café de Spécialité Maison Saveur"
               className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
             />
