@@ -1,3 +1,4 @@
+import fixedImage0 from '../../assets/images/dish_truffle_gastronomy_1792754320242.jpg';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
@@ -680,7 +681,7 @@ export const CulinaryPlateScene: React.FC<Props> = ({ className = '', onClocheTo
         /* Static Elegant Fallback if WebGL is unavailable */
         <div className="w-full h-full relative flex items-center justify-center bg-[#0d0d11]">
           <img 
-            src="/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg" 
+            src={fixedImage0} 
             alt="Maison Saveur Plat d'Or"
             className="w-full h-full object-cover opacity-60"
           />
