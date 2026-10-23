@@ -94,7 +94,7 @@ export const CinematicVideoHero: React.FC<Props> = ({
   };
 
   return (
-    <div className="relative w-full h-[94vh] min-h-[660px] flex items-center justify-center overflow-hidden bg-[#07070a]">
+    <div className="maison-mobile-hero relative w-full h-[94vh] min-h-[660px] flex items-center justify-center overflow-hidden bg-[#07070a]">
       
       {/* Actual MP4 Moving Cinematic 3D Video Asset */}
       <video
@@ -118,7 +118,7 @@ export const CinematicVideoHero: React.FC<Props> = ({
       <div className="absolute inset-0 bg-radial from-transparent via-black/25 to-black/60 pointer-events-none" />
 
       {/* Mode Switcher HUD (Top Right) */}
-      <div className="absolute top-6 right-6 z-30 flex items-center gap-2">
+      <div className="maison-mobile-switcher absolute top-6 right-6 z-30 flex items-center gap-2">
         <div className="flex items-center gap-1 bg-[#0a0a0e]/85 backdrop-blur-md p-1 rounded-xl border border-[#d4af37]/30 shadow-2xl">
           <button
             onClick={() => onToggleMode('film')}
@@ -157,10 +157,10 @@ export const CinematicVideoHero: React.FC<Props> = ({
       </div>
 
       {/* Floating Editorial Narrative (Left/Top) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex flex-col justify-between py-12 pointer-events-none">
+      <div className="maison-mobile-content relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex flex-col justify-between py-12 pointer-events-none">
         
         {/* Top Kicker */}
-        <div className="max-w-xl pointer-events-auto mt-6">
+        <div className="maison-mobile-heading max-w-xl pointer-events-auto mt-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#d4af37]/30 text-[#d4af37] text-[10px] uppercase tracking-[0.25em] font-cinzel mb-3">
             <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-ping" />
             <span>Film Commercial 3D Haute Définition</span>
@@ -171,11 +171,11 @@ export const CinematicVideoHero: React.FC<Props> = ({
             <span className="italic font-light text-[#d4af37]">{t('heroTitleLine2')}</span>
           </h1>
 
-          <p className="mt-4 text-xs sm:text-sm text-[#d8d3c8]/90 max-w-md leading-relaxed hidden sm:block">
+          <p className="mt-4 text-xs sm:text-sm text-[#d8d3c8]/90 maison-mobile-subtitle max-w-md leading-relaxed hidden sm:block">
             {t('heroSubtitle')}
           </p>
 
-          <div className="mt-6 flex items-center gap-4">
+          <div className="maison-mobile-actions mt-6 flex items-center gap-4">
             <button
               onClick={onExploreMenu}
               className="px-6 py-3 bg-[#d4af37] hover:bg-[#e6ca65] text-[#0a0a0c] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg hover:shadow-[#d4af37]/30 flex items-center gap-2 cursor-pointer"
@@ -195,7 +195,7 @@ export const CinematicVideoHero: React.FC<Props> = ({
         </div>
 
         {/* Bottom Discreet Film Timeline & Control Dock */}
-        <div className="pointer-events-auto flex flex-col gap-2">
+        <div className="maison-mobile-controls pointer-events-auto flex flex-col gap-2">
           
           {/* Timeline hairline */}
           <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden backdrop-blur-sm">
