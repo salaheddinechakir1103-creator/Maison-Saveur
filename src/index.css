@@ -97,3 +97,13 @@ img, video, canvas { max-width: 100%; }
   .maison-mobile-hero .maison-mobile-actions button { padding: 9px 12px; font-size: 9px; letter-spacing: .04em; }
   .maison-mobile-hero .maison-mobile-controls { padding: 8px 10px; border: 1px solid rgba(212,175,55,.24); background: rgba(10,10,14,.75); border-radius: 5px; }
 }
+
+/* Mobile preview correction: retain full-bleed film, compact header, and two-column dishes.
+   Do not overlay hero copy on the cinematic film at phone sizes. */
+@media (max-width: 639px) {
+  .maison-mobile-hero { height: 80svh; min-height: 600px; max-height: 860px; }
+  .maison-mobile-hero .maison-mobile-content { padding: 16px 12px 12px; }
+  .maison-mobile-hero .maison-mobile-heading { display: none; }
+  .maison-mobile-hero .maison-mobile-switcher { display: none; }
+  .maison-mobile-hero .maison-mobile-controls { margin-top: auto; }
+}
