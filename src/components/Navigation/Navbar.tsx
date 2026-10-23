@@ -67,12 +67,12 @@ export const Navbar: React.FC<Props> = ({
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-[#0a0a0c]/90 backdrop-blur-md border-b border-[#d4af37]/20 transition-all">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 xl:gap-6">
           
           {/* Zone 1: Single text element wordmark */}
           <button
             onClick={() => handleNavClick('home')}
-            className="text-xl md:text-2xl font-cinzel font-bold tracking-widest text-[#fcfaf6] hover:text-[#d4af37] transition-colors whitespace-nowrap shrink-0 text-left cursor-pointer"
+            className="text-[15px] sm:text-xl xl:text-2xl font-cinzel font-bold tracking-[0.08em] sm:tracking-widest text-[#fcfaf6] hover:text-[#d4af37] transition-colors whitespace-nowrap shrink-0 text-left cursor-pointer"
           >
             MAISON SAVEUR
           </button>
@@ -98,7 +98,7 @@ export const Navbar: React.FC<Props> = ({
           </nav>
 
           {/* Zone 3: 1 primary action + Language, Currency, Sound, Cart & Admin utility */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
             
             {/* Currency Switcher */}
             <button
