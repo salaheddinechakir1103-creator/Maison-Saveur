@@ -67,12 +67,12 @@ export const Navbar: React.FC<Props> = ({
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-[#0a0a0c]/90 backdrop-blur-md border-b border-[#d4af37]/20 transition-all">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 xl:gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 xl:gap-6">
           
           {/* Zone 1: Single text element wordmark */}
           <button
             onClick={() => handleNavClick('home')}
-            className="text-[15px] sm:text-xl xl:text-2xl font-cinzel font-bold tracking-[0.08em] sm:tracking-widest text-[#fcfaf6] hover:text-[#d4af37] transition-colors whitespace-nowrap shrink-0 text-left cursor-pointer"
+            className="text-[18px] sm:text-xl xl:text-2xl font-cinzel font-bold tracking-[0.08em] sm:tracking-widest text-[#fcfaf6] hover:text-[#d4af37] transition-colors whitespace-nowrap shrink-0 text-left cursor-pointer"
           >
             MAISON SAVEUR
           </button>
@@ -103,7 +103,7 @@ export const Navbar: React.FC<Props> = ({
             {/* Currency Switcher */}
             <button
               onClick={cycleCurrency}
-              className="px-2 py-1.5 text-xs text-[#d4af37] border border-[#d4af37]/30 rounded-lg hover:bg-[#d4af37]/10 transition-colors cursor-pointer font-semibold"
+              className="hidden sm:inline-flex px-2 py-1.5 text-xs text-[#d4af37] border border-[#d4af37]/30 rounded-lg hover:bg-[#d4af37]/10 transition-colors cursor-pointer font-semibold"
               title="Devise : MAD / EUR / USD"
             >
               {currency}
@@ -112,7 +112,7 @@ export const Navbar: React.FC<Props> = ({
             {/* Procedural Audio Ambient Soundscape Toggle */}
             <button
               onClick={toggleAudio}
-              className={`p-2 rounded-lg border transition-colors cursor-pointer ${
+              className={`hidden sm:inline-flex p-2 rounded-lg border transition-colors cursor-pointer ${
                 isAudioPlaying 
                   ? 'bg-[#d4af37]/20 border-[#d4af37] text-[#d4af37]' 
                   : 'bg-[#121217] border-white/10 text-[#a1a1aa] hover:text-white'
@@ -126,7 +126,7 @@ export const Navbar: React.FC<Props> = ({
             {/* Direct Admin Access Button */}
             <button
               onClick={() => handleNavClick('admin')}
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 text-xs rounded-lg transition-colors cursor-pointer border ${
+              className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-xs rounded-lg transition-colors cursor-pointer border ${
                 activePage === 'admin'
                   ? 'bg-[#d4af37] text-[#0a0a0c] font-bold border-[#d4af37]'
                   : 'bg-[#14141c] text-[#d4af37] border-[#d4af37]/30 hover:bg-[#d4af37]/15'
@@ -140,7 +140,7 @@ export const Navbar: React.FC<Props> = ({
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-[#d4af37] border border-[#d4af37]/30 rounded-lg hover:bg-[#d4af37]/10 transition-colors cursor-pointer"
+              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-[#d4af37] border border-[#d4af37]/30 rounded-lg hover:bg-[#d4af37]/10 transition-colors cursor-pointer"
               title="Changer de langue / تغيير اللغة"
             >
               <Globe className="w-3.5 h-3.5" />
@@ -184,7 +184,7 @@ export const Navbar: React.FC<Props> = ({
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 z-40 bg-[#0a0a0c]/98 backdrop-blur-xl border-b border-[#d4af37]/20 flex flex-col p-6 animate-fadeIn">
+        <div className="lg:hidden fixed inset-0 top-16 sm:top-20 z-40 bg-[#0a0a0c]/98 backdrop-blur-xl border-b border-[#d4af37]/20 flex flex-col p-6 animate-fadeIn">
           <nav className="flex flex-col gap-4 py-4">
             {navLinks.map((link) => (
               <button
