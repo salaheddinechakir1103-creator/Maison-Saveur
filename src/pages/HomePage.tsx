@@ -192,8 +192,8 @@ export const HomePage: React.FC<Props> = ({ setActivePage }) => {
       {/* =========================================================================
           CHAPTER 01: SIGNATURE DISHES (Featured Collection)
       ========================================================================= */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#d4af37]/20">
+      <section className="py-12 sm:py-24 px-5 sm:px-6 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-16 pb-6 sm:pb-8 border-b border-[#d4af37]/20">
           <div>
             <span className="text-xs uppercase tracking-[0.25em] text-[#d4af37] font-cinzel block mb-2">
               01. Chapitre Premier
