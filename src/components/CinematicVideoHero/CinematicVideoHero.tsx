@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import heroPoster from '../../assets/images/dish_truffle_gastronomy_1792754320242.jpg';
 import { useLanguage } from '../../context/LanguageContext';
 import { 
   Play, 
@@ -75,8 +76,7 @@ export const CinematicVideoHero: React.FC<Props> = ({
     if (!video) return;
 
     if (video.paused) {
-      video.play();
-      setIsPlaying(true);
+      video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     } else {
       video.pause();
       setIsPlaying(false);
@@ -100,7 +100,7 @@ export const CinematicVideoHero: React.FC<Props> = ({
       <video
         ref={videoRef}
         src="/videos/hero.mp4"
-        poster="/src/assets/images/dish_truffle_gastronomy_1792754320242.jpg"
+        poster={heroPoster}
         autoPlay
         muted
         loop
