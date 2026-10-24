@@ -107,3 +107,12 @@ img, video, canvas { max-width: 100%; }
   .maison-mobile-hero .maison-mobile-switcher { display: none; }
   .maison-mobile-hero .maison-mobile-controls { margin-top: auto; }
 }
+
+/* Refined mobile restaurant landing: immersive film, no demo/player chrome. */
+@media (max-width: 639px) {
+ .maison-mobile-hero { height: 72svh; min-height: 480px; max-height: 720px; border: 0; }
+ .maison-mobile-hero .maison-mobile-controls { display: none; }
+ .maison-mobile-hero .maison-mobile-content { display: none; }
+ .maison-mobile-hero video { object-position: center center; }
+ .maison-mobile-hero + section { padding-top: 44px; }
+}
